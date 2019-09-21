@@ -19,7 +19,7 @@ int main(){
     		gpf[j] = i;
     }
     //stores in em[i] the number of even multiplicities minus number of odd 
-	//multiplicities in the prime factorization of i
+    //multiplicities in the prime factorization of i
     for (int i = 2; i < MAX; i++) {
         //impar = 0 se maior fator primo de i tem expoente par
         int j = i, impar = 0;
