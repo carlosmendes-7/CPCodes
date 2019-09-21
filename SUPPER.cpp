@@ -6,15 +6,15 @@
 using namespace std;
 
 int32_t main(){
-	ios::sync_with_stdio(false); cin.tie(0);
-	int nteste = 10;
-	while(nteste--){
-		int n; cin >> n;
-	    vector<int> vet(n), size_lis_ending_in(n), size_lis_starting_at(n), dp;
+    ios::sync_with_stdio(false); cin.tie(0);
+    int nteste = 10;
+    while(nteste--){
+        int n; cin >> n;
+        vector<int> vet(n), size_lis_ending_in(n), size_lis_starting_at(n), dp;
         for(int &x : vet)
             cin >> x;
         for(int i = 0; i < n; ++i){
-        	int x = vet[i];
+            int x = vet[i];
             if(dp.empty() || x > dp.back()){
                 dp.push_back(x);
                 size_lis_ending_in[i] = dp.size();
@@ -26,9 +26,9 @@ int32_t main(){
 
             }
         }
-		dp.clear();
+        dp.clear();
         for(int i = n-1; i >= 0; --i){
-        	int x = -vet[i];
+            int x = -vet[i];
             if(dp.empty() || x > dp.back()){
                 dp.push_back(x);
                 size_lis_starting_at[i] = dp.size();
@@ -40,14 +40,14 @@ int32_t main(){
 
             }
         }
-		set<int> supper;
+        set<int> supper;
         for(int i = 0; i < n; ++i){
-        	if(size_lis_ending_in[i] + size_lis_starting_at[i] - 1 == dp.size())
-        		supper.insert(vet[i]);
+            if(size_lis_ending_in[i] + size_lis_starting_at[i] - 1 == dp.size())
+                supper.insert(vet[i]);
         }
         cout << supper.size() << '\n';
         for(int x : supper)
-        	cout << x << ' ';
+            cout << x << ' ';
         cout << '\n';
-	}
+    }
 }
