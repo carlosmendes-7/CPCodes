@@ -14,14 +14,14 @@ int32_t main(){
         vector<int> s3(n+1), posicao_em_s1(n+1), dp;
         int x;
         for(int i = 1; i <= n; ++i){ //recebe s1
-			cin >> x;
-			posicao_em_s1[x] = i;
-		}
-		for(int i = 1; i <= n; ++i){ //recebe s2
-			cin >> x;
-			s3[i] = posicao_em_s1[x];
-		}
-		dp.push_back(s3[1]);
+            cin >> x;
+            posicao_em_s1[x] = i;
+        }
+        for(int i = 1; i <= n; ++i){ //recebe s2
+            cin >> x;
+            s3[i] = posicao_em_s1[x];
+        }
+        dp.push_back(s3[1]);
         for(int i = 2; i <= n; ++i){
             if(s3[i] > dp.back())
                 dp.push_back(s3[i]);
