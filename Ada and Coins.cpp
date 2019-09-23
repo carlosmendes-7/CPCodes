@@ -25,16 +25,3 @@ int32_t main(){
         cout << soma[r] - soma[l-1] << '\n';
     }
 }
-/*Ada has some coins in her wallet. She is wondering, how many different values is she able to make in a given range?
-A value is a sum of some subset of coins.
-
-Input
-The first line contains two integer numbers 1 ≤ N ≤ 104, 1 ≤ Q ≤ 5*105, the number of coins and number of queries.
-
-The next line contains N integer numbers 1 ≤ Ai ≤ 105, the values of coins in Ada's wallet.
-
-Afterward, Q lines follow, each containing two integers 1 ≤ B ≤ E ≤ 105, beginning and end of range, for which
- ada wants to know the answer
-
-Output
-For each query, output the number of distinct values Ada can generate in given range.*/
