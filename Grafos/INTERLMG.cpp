@@ -19,12 +19,10 @@ void init(int n){
         tam[i] = 1;
     }
 }
- 
 int find(int u){
     if(pai[u] == u) return u;
     return pai[u] = find(pai[u]);
 }
- 
 void merge(int u, int v){
     int a = find(u);
     int b = find(v);
@@ -33,7 +31,6 @@ void merge(int u, int v){
     pai[b] = a;
     tam[a] += tam[b];
 }
- 
 int32_t main(){
 	ios::sync_with_stdio(false); cin.tie(0);
 	int n;
